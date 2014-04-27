@@ -6,19 +6,18 @@ import cucumber.api.java.en.Then;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import support.KnowsTheAccount;
 import transforms.MoneyConverter;
 
 @ContextConfiguration("classpath:cucumber.xml")
 public class AccountSteps {
 
   @Autowired
-  KnowsTheAccount accountHelper;
+  private Account testAccount;
 
   @Given("^my account has been credited with (\\$\\d+\\.\\d+)$")
   public void My_account_has_been_credited_with_d(@Transform(MoneyConverter.class) Money amount) 
                                                               throws Throwable {
-    accountHelper.credit(amount);
+      testAccount.credit(amount);
   }
 
   // START:balance-check
@@ -30,7 +29,7 @@ public class AccountSteps {
 
       while (assertionNotPassedYet){
           try {
-            Assert.assertEquals("Incorrect account balance -", amount, accountHelper.getBalance());
+            Assert.assertEquals("Incorrect account balance -", amount, testAccount.getBalance());
             assertionNotPassedYet = false;
           } catch (AssertionError ae) {
               try {

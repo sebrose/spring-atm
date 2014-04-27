@@ -10,9 +10,13 @@
     <context:annotation-config/>
     <context:component-scan base-package="nicebank, support" />
 
-    <bean class="org.openqa.selenium.support.events.EventFiringWebDriver" scope="cucumber-glue" destroy-method="close" lazy-init="true">
+    <bean class="org.openqa.selenium.support.events.EventFiringWebDriver" scope="cucumber-glue" destroy-method="close">
         <constructor-arg>
-            <bean class="org.openqa.selenium.firefox.FirefoxDriver" scope="cucumber-glue" lazy-init="true"/>
+            <bean class="org.openqa.selenium.firefox.FirefoxDriver" scope="cucumber-glue"/>
         </constructor-arg>
     </bean>
+
+    <bean class="nicebank.CashSlot" scope="cucumber-glue" />
+    <bean class="support.AccountFactory" factory-method="createTestAccount" lazy-init="true" scope="cucumber-glue" />
+
 </beans>
