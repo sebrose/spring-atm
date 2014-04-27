@@ -2,10 +2,11 @@ package support;
 
 import nicebank.Account;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-//@ContextConfiguration("classpath:cucumber.xml")
+@Scope("cucumber-glue")
 public class KnowsTheTeller {
     @Autowired
     private AtmUserInterface atmUserInterface;

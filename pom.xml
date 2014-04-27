@@ -11,11 +11,9 @@
     <properties>
         <cucumber.version>1.1.6</cucumber.version>
         <junit.version>4.11</junit.version>
-        <picocontainer.version>2.14.2</picocontainer.version>
         <selenium.version>2.41.0</selenium.version>
         <webbit.version>0.4.14</webbit.version>
         <spring.version>3.2.8.RELEASE</spring.version>
-        <spring.data.version>1.4.1.RELEASE</spring.data.version>
     </properties>
 
     <dependencies>
@@ -23,6 +21,12 @@
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- START:spring -->

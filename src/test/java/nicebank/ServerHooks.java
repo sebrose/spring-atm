@@ -3,14 +3,12 @@ package nicebank;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 import support.KnowsTheAccount;
 import support.KnowsTheCashSlot;
 
 import java.io.IOException;
 
-@Component
 @ContextConfiguration("classpath:cucumber.xml")
 public class ServerHooks {
     public static final int PORT = 8887;

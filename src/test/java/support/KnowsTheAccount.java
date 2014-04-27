@@ -3,10 +3,11 @@ package support;
 import nicebank.Account;
 import nicebank.Money;
 import org.javalite.activejdbc.Base;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-//@ContextConfiguration("classpath:cucumber.xml")
+@Scope("cucumber-glue")
 public class KnowsTheAccount {
     private final Account myAccount;
 

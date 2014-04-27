@@ -1,10 +1,11 @@
 package support;
 
 import nicebank.CashSlot;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-//@ContextConfiguration("classpath:cucumber.xml")
+@Scope("cucumber-glue")
 public class KnowsTheCashSlot {
     private final CashSlot cashSlot;
 
