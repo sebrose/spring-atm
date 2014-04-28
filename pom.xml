@@ -13,7 +13,7 @@
         <junit.version>4.11</junit.version>
         <selenium.version>2.41.0</selenium.version>
         <webbit.version>0.4.14</webbit.version>
-        <spring.version>3.2.8.RELEASE</spring.version>
+        <spring.version>4.0.2.RELEASE</spring.version>
     </properties>
 
     <dependencies>

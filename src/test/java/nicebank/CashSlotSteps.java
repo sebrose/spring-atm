@@ -8,8 +8,13 @@ import org.springframework.test.context.ContextConfiguration;
 @ContextConfiguration("classpath:cucumber.xml")
 public class CashSlotSteps {
 
-  @Autowired
   private CashSlot cashSlot;
+
+  @Autowired
+  public CashSlotSteps(CashSlot cs) {
+      cashSlot = cs;
+
+  }
 
   @Given("^\\$(\\d+) should be dispensed$")
   public void d_should_be_dispensed(int amount) throws Throwable {
